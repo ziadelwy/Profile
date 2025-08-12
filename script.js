@@ -617,7 +617,7 @@ class PortfolioManager {
     setupThemeToggle() {
         const themeToggle = document.getElementById('themeToggle');
         
-        const currentTheme = localStorage.getItem('theme') || 'light';
+        const currentTheme = localStorage.getItem('theme') || 'dark';
         
         // Apply saved theme
         document.documentElement.setAttribute('data-theme', currentTheme);
@@ -632,7 +632,6 @@ class PortfolioManager {
                 localStorage.setItem('theme', newTheme);
                 this.updateThemeIcon(newTheme);
                 
-                this.showNotification(`${newTheme === 'dark' ? 'Dark' : 'Light'} mode enabled!`, 'success');
             });
         } else {
             console.error('Theme toggle button not found!');
