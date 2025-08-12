@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Admin Dashboard</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Header -->
+        <header class="admin-header">
+            <h1><i class="fas fa-cog"></i> Portfolio Admin Dashboard</h1>
+            <div class="header-actions">
+                <button class="btn btn-secondary" id="viewPortfolioBtn">
+                    <i class="fas fa-eye"></i> View Portfolio
+                </button>
+                <button class="btn btn-primary" id="saveAllBtn">
+                    <i class="fas fa-save"></i> Save All Changes
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="admin-nav">
+            <button class="nav-tab active" data-tab="profile">
+                <i class="fas fa-user"></i> Profile
+            </button>
+            <button class="nav-tab" data-tab="about">
+                <i class="fas fa-info-circle"></i> About
+            </button>
+            <button class="nav-tab" data-tab="skills">
+                <i class="fas fa-code"></i> Skills
+            </button>
+            <button class="nav-tab" data-tab="projects">
+                <i class="fas fa-project-diagram"></i> Projects
+            </button>
+            <button class="nav-tab" data-tab="jobs">
+                <i class="fas fa-briefcase"></i> Jobs
+            </button>
+            <button class="nav-tab" data-tab="contact">
+                <i class="fas fa-address-book"></i> Contact
+            </button>
+            <button class="nav-tab" data-tab="settings">
+                <i class="fas fa-cog"></i> Settings
+            </button>
+        </nav>
+
+        <!-- Tab Content -->
+        <main class="admin-content">
+            <!-- Profile Tab -->
+            <div class="tab-content active" id="profile-tab">
+                <div class="content-section">
+                    <h2>Profile Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="profileName">Full Name</label>
+                            <input type="text" id="profileName" placeholder="Enter your full name">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="profileSpecializations">Specializations (comma-separated)</label>
+                            <input type="text" id="profileSpecializations" placeholder="Web Developer, UI/UX Designer, Software Engineer">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Tab -->
+            <div class="tab-content" id="about-tab">
+                <div class="content-section">
+                    <h2>About Section</h2>
+                    <div class="form-group">
+                        <label for="aboutText">About Me</label>
+                        <textarea id="aboutText" rows="8" placeholder="Write your about me text here..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skills Tab -->
+            <div class="tab-content" id="skills-tab">
+                <div class="content-section">
+                    <h2>Skills Management</h2>
+                    <div class="skills-controls">
+                        <button class="btn btn-success" id="addSkillBtn">
+                            <i class="fas fa-plus"></i> Add New Skill
+                        </button>
+                        <button class="btn btn-secondary" id="reorderSkillsBtn">
+                            <i class="fas fa-sort"></i> Reorder Skills
+                        </button>
+                    </div>
+                    <div class="skills-list" id="skillsList">
+                        <!-- Skills will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Tab -->
+            <div class="tab-content" id="projects-tab">
+                <div class="content-section">
+                    <h2>Projects Management</h2>
+                    <div class="projects-controls">
+                        <button class="btn btn-success" id="addProjectBtn">
+                            <i class="fas fa-plus"></i> Add New Project
+                        </button>
+                    </div>
+                    <div class="projects-list" id="projectsList">
+                        <!-- Projects will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jobs Tab -->
+            <div class="tab-content" id="jobs-tab">
+                <div class="content-section">
+                    <h2>Jobs Management</h2>
+                    <div class="jobs-controls">
+                        <button class="btn btn-success" id="addJobBtn">
+                            <i class="fas fa-plus"></i> Add New Job
+                        </button>
+                    </div>
+                    <div class="jobs-list" id="jobsList">
+                        <!-- Jobs will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Tab -->
+            <div class="tab-content" id="contact-tab">
+                <div class="content-section">
+                    <h2>Contact Information</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="githubLink">GitHub</label>
+                            <input type="url" id="githubLink" placeholder="https://github.com/yourusername">
+                        </div>
+                        <div class="form-group">
+                            <label for="linkedinLink">LinkedIn</label>
+                            <input type="url" id="linkedinLink" placeholder="https://linkedin.com/in/yourusername">
+                        </div>
+                        <div class="form-group">
+                            <label for="facebookLink">Facebook</label>
+                            <input type="url" id="facebookLink" placeholder="https://facebook.com/yourusername">
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsappLink">WhatsApp</label>
+                            <input type="tel" id="whatsappLink" placeholder="+1234567890">
+                        </div>
+                        <div class="form-group">
+                            <label for="discordLink">Discord</label>
+                            <input type="text" id="discordLink" placeholder="username#1234">
+                        </div>
+                        <div class="form-group">
+                            <label for="telegramLink">Telegram</label>
+                            <input type="text" id="telegramLink" placeholder="@username">
+                        </div>
+                        <div class="form-group">
+                            <label for="emailLink">Email</label>
+                            <input type="email" id="emailLink" placeholder="your.email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneLink">Phone</label>
+                            <input type="tel" id="phoneLink" placeholder="+1234567890">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Settings Tab -->
+            <div class="tab-content" id="settings-tab">
+                <div class="content-section">
+                    <h2>Admin Settings</h2>
+                    <div class="form-group">
+                        <label for="adminPassword">Admin Password</label>
+                        <input type="password" id="adminPassword" placeholder="Enter new admin password">
+                        <button class="btn btn-secondary" id="changePasswordBtn">Change Password</button>
+                    </div>
+                    <div class="form-group">
+                        <h4>Export/Import Data</h4>
+                        <div class="data-controls">
+                            <button class="btn btn-secondary" id="exportDataBtn">Export Data</button>
+                            <button class="btn btn-secondary" id="importDataBtn">Import Data</button>
+                            <input type="file" id="importFileInput" accept=".json" style="display: none;">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-danger" id="resetDataBtn">Reset to Default</button>
+                        <button class="btn btn-warning" id="clearAndReloadBtn">Clear & Reload Default</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Status Bar -->
+        <footer class="admin-status">
+            <div class="status-info">
+                <span id="lastSaved">Last saved: Never</span>
+                <span id="dataStatus">Status: Ready</span>
+            </div>
+            <div class="status-actions">
+                <button class="btn btn-sm btn-secondary" id="refreshDataBtn">
+                    <i class="fas fa-sync"></i> Refresh
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Modals -->
+    <div class="modal" id="skillModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="skillModalTitle">Add New Skill</h3>
+                <button class="modal-close" id="skillModalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="skillName">Skill Name</label>
+                    <input type="text" id="skillName" placeholder="Enter skill name">
+                </div>
+                <div class="form-group">
+                    <label for="skillCategory">Category</label>
+                    <select id="skillCategory">
+                        <option value="frontend">Frontend</option>
+                        <option value="backend">Backend</option>
+                        <option value="design">Design</option>
+                        <option value="tools">Tools</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="skillRating">Rating (1-5)</label>
+                    <div class="rating-input">
+                        <input type="range" id="skillRating" min="1" max="5" value="3">
+                        <span id="ratingValue">3</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="skillModalCancel">Cancel</button>
+                <button class="btn btn-primary" id="skillModalSave">Save Skill</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="jobModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 id="jobModalTitle">Add New Job</h3>
+                <button class="modal-close" id="jobModalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="jobTitle">Job Title</label>
+                        <input type="text" id="jobTitle" placeholder="Enter job title">
+                    </div>
+                    <div class="form-group">
+                        <label for="jobCompany">Company Name</label>
+                        <input type="text" id="jobCompany" placeholder="Enter company name">
+                    </div>
+                    <div class="form-group">
+                        <label for="jobType">Type of Work</label>
+                        <select id="jobType">
+                            <option value="Full-time">Full-time</option>
+                            <option value="Part-time">Part-time</option>
+                            <option value="Contract">Contract</option>
+                            <option value="Freelance">Freelance</option>
+                            <option value="Internship">Internship</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobDuration">Duration</label>
+                        <input type="text" id="jobDuration" placeholder="e.g., Jan 2023 - Present">
+                    </div>
+                    <div class="form-group">
+                        <label for="jobLocation">Company Location</label>
+                        <input type="text" id="jobLocation" placeholder="Enter company location">
+                    </div>
+                    <div class="form-group">
+                        <label for="jobSiteType">Site Type</label>
+                        <select id="jobSiteType">
+                            <option value="On-site">On-site</option>
+                            <option value="Remote">Remote</option>
+                            <option value="Hybrid">Hybrid</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jobStatus">Work Status</label>
+                        <select id="jobStatus">
+                            <option value="Current">Currently Working</option>
+                            <option value="Previous">Previously Worked</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="jobSocialMedia">Social Media Link</label>
+                        <input type="url" id="jobSocialMedia" placeholder="Enter company social media or website URL">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="jobDescription">Job Description</label>
+                        <textarea id="jobDescription" rows="6" placeholder="Describe your role, responsibilities, and achievements..."></textarea>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="jobModalCancel">Cancel</button>
+                <button class="btn btn-primary" id="jobModalSave">Save Job</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="projectModal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h3 id="projectModalTitle">Add New Project</h3>
+                <button class="modal-close" id="projectModalClose">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="projectTitle">Project Title</label>
+                        <input type="text" id="projectTitle" placeholder="Enter project title">
+                    </div>
+                    <div class="form-group">
+                        <label for="projectImage">Project Image/Emoji</label>
+                        <input type="text" id="projectImage" placeholder="Enter emoji or image URL" value="🛒">
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="projectDescription">Project Description</label>
+                        <textarea id="projectDescription" rows="4" placeholder="Describe your project, features, and technologies used..."></textarea>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="projectTech">Technologies Used (comma-separated)</label>
+                        <input type="text" id="projectTech" placeholder="React, Node.js, MongoDB, etc.">
+                    </div>
+                    <div class="form-group">
+                        <label for="projectLiveUrl">Live Demo URL</label>
+                        <input type="url" id="projectLiveUrl" placeholder="https://example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="projectGithubUrl">GitHub Repository URL</label>
+                        <input type="url" id="projectGithubUrl" placeholder="https://github.com/username/project">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" id="projectModalCancel">Cancel</button>
+                <button class="btn btn-primary" id="projectModalSave">Save Project</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js"></script>
+    
+    <!-- Admin Script -->
+    <script src="admin.js"></script>
+</body>
+</html> 

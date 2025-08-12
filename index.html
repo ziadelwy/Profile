@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=18">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Dynamic Wallpaper Container -->
+    <div id="dynamicWallpaper" class="dynamic-wallpaper">
+        <div class="wallpaper-layer wallpaper-bg"></div>
+        <div class="wallpaper-layer wallpaper-particles"></div>
+        <div class="wallpaper-layer wallpaper-glow"></div>
+    </div>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2>Loading Portfolio...</h2>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="profile-info">
+                <h1 class="name" data-editable="true"></h1>
+                <div class="specializations" data-editable="true">
+                    <span class="specialization"></span>
+                    <span class="specialization"></span>
+                    <span class="specialization"></span>
+                </div>
+            </div>
+            
+            <div class="contact-methods">
+                <a href="#" class="contact-icon" data-platform="github" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="#" class="contact-icon" data-platform="linkedin" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#" class="contact-icon" data-platform="facebook" title="Facebook">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#" class="contact-icon" data-platform="whatsapp" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="contact-icon" data-platform="discord" title="Discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+                <a href="#" class="contact-icon" data-platform="telegram" title="Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
+                <a href="#" class="contact-icon" data-platform="email" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="#" class="contact-icon" data-platform="phone" title="Phone">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+            
+
+        </div>
+    </header>
+
+    <!-- Floating Admin Controls -->
+    <div class="floating-admin-controls">
+        <button class="theme-toggle" id="themeToggle" title="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+        <!--<a href="admin.html" class="admin-btn" title="Admin Dashboard">
+            <i class="fas fa-cog"></i>
+            <span>Admin</span>
+        </a>-->
+    </div>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-editable="true">
+                    <h2>About Me</h2>
+                    <p></p>
+                </div>
+                <div class="about-photo">
+                    <img src="000.png" alt="Profile Photo" class="profile-photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Jobs Section -->
+    <section class="jobs-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Work Experience</h2>
+                <p>My professional journey and career achievements in the tech industry</p>
+            </div>
+            <div class="jobs-grid" id="jobsGrid">
+                <!-- Jobs will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills & Expertise</h2>
+                <p>Technical skills, tools, and technologies I've mastered throughout my career</p>
+            </div>
+            
+            <div class="skills-grid" id="skillsGrid">
+                <!-- Skills will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Featured Projects</h2>
+                <p>Showcase of my best work, demonstrating creativity and technical expertise</p>
+            </div>
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Back to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Progress Indicator -->
+    <div class="section-progress">
+        <div class="section-progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+    
+    <!-- Firebase Configuration -->
+    <script src="firebase-config.js"></script>
+    
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html> 
