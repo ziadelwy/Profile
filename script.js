@@ -164,7 +164,7 @@ class PortfolioManager {
         });
     }
 
-    // Update contact links
+   // Update contact links
     updateContactLinks() {
         const contactIcons = document.querySelectorAll('.contact-icon');
         contactIcons.forEach(icon => {
@@ -178,12 +178,16 @@ class PortfolioManager {
                     icon.href = `tel:${link}`;
                 } else if (platform === 'whatsapp') {
                     icon.href = `https://wa.me/${link.replace('+', '')}`;
+                    icon.target = '_blank';
                 } else if (platform === 'telegram') {
                     icon.href = `https://t.me/${link.replace('@', '')}`;
+                    icon.target = '_blank';
                 } else if (platform === 'discord') {
                     icon.href = `https://discord.com/users/${link}`;
+                    icon.target = '_blank';
                 } else {
                     icon.href = link;
+                    icon.target = '_blank';
                 }
             }
         });
